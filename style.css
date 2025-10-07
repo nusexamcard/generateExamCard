@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    border-bottom: 3px solid #2c3e50;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.university-info h1 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.motto {
+    font-style: italic;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.university-code {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Exam Title */
+.exam-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.exam-title h2 {
+    color: #2c3e50;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.academic-session {
+    color: #7f8c8d;
+    font-weight: bold;
+}
+
+/* Form Sections */
+.form-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+.form-section h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+/* Form Grid */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Courses Grid */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+.course-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.course-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.course-item label {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Rules Section */
+.rules-section {
+    background: #fff;
+    border-left: 4px solid #e74c3c;
+}
+
+.rules-content {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 15px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.rules-content ol {
+    padding-left: 20px;
+}
+
+.rules-content li {
+    margin-bottom: 10px;
+}
+
+.rules-content ul {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+/* Acceptance Section */
+.acceptance-section {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    padding: 10px;
+    background: #e8f4fc;
+    border-radius: 4px;
+}
+
+.acceptance-section input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.signature-section {
+    margin-top: 15px;
+}
+
+/* Buttons */
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.preview-btn {
+    background: #3498db;
+    color: white;
+}
+
+.preview-btn:hover {
+    background: #2980b9;
+}
+
+.submit-btn {
+    background: #27ae60;
+    color: white;
+}
+
+.submit-btn:hover {
+    background: #219a52;
+}
+
+.print-btn {
+    background: #e67e22;
+    color: white;
+}
+
+.print-btn:hover {
+    background: #d35400;
+}
+
+/* Preview Section */
+.preview-section {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    background: white;
+}
+
+.exam-card-preview {
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    
+    .exam-card-preview,
+    .exam-card-preview * {
+        visibility: visible;
+    }
+    
+    .exam-card-preview {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+}

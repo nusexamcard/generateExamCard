@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Examination Card - NWUS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- University Header -->
+        <div class="header">
+            <div class="university-info">
+                <h1>NORTHWEST UNIVERSITY SOKOTO</h1>
+                <p class="motto">Knowledge Excellence and Success</p>
+                <p class="university-code">(NWUS)</p>
+            </div>
+        </div>
+
+        <!-- Exam Card Title -->
+        <div class="exam-title">
+            <h2>EMERGENCY EXAMINATION CARD</h2>
+            <p class="academic-session">FIRST SEMESTER 2024/2025 Academic Session</p>
+        </div>
+
+        <!-- Student Information Form -->
+        <form id="examForm" class="exam-form">
+            <div class="form-section">
+                <h3>STUDENT INFORMATION</h3>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="admissionNo">ADMISSION NUMBER *</label>
+                        <input type="text" id="admissionNo" name="admissionNo" required 
+                               placeholder="NWUS/CHS/RAD/24/011">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fullName">FULL NAME *</label>
+                        <input type="text" id="fullName" name="fullName" required 
+                               placeholder="MANIRU LABARAN MUHAMMAD">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="programme">PROGRAMME *</label>
+                        <select id="programme" name="programme" required>
+                            <option value="">Select Programme</option>
+                            <option value="B.Rad. Radiography">B.Rad. Radiography</option>
+                            <option value="B.Sc. Nursing">B.Sc. Nursing</option>
+                            <option value="B.Sc. Medicine">B.Sc. Medicine</option>
+                            <option value="B.Sc. Public Health">B.Sc. Public Health</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="level">LEVEL *</label>
+                        <select id="level" name="level" required>
+                            <option value="">Select Level</option>
+                            <option value="100">100</option>
+                            <option value="200">200</option>
+                            <option value="300">300</option>
+                            <option value="400">400</option>
+                            <option value="500">500</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">PHONE NUMBER *</label>
+                        <input type="tel" id="phone" name="phone" required 
+                               placeholder="08069576234">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">EMAIL ADDRESS *</label>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="student@nwus.edu.ng">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Selection -->
+            <div class="form-section">
+                <h3>COURSE REGISTRATION</h3>
+                <p class="section-instruction">Select all courses you are registered for:</p>
+                
+                <div class="courses-grid">
+                    <div class="course-item">
+                        <input type="checkbox" id="bio101" name="courses" value="BIO101">
+                        <label for="bio101">BIO101 - General Biology I (2 Units)</label>
+                    </div>
+                    <div class="course-item">
+                        <input type="checkbox" id="bio107" name="courses" value="BIO107">
+                        <label for="bio107">BIO107 - General Biology Practical I (1 Unit)</label>
+                    </div>
+                    <div class="course-item">
+                        <input type="checkbox" id="chm101" name="courses" value="CHM101">
+                        <label for="chm101">CHM101 - General Chemistry I (2 Units)</label>
+                    </div>
+                    <div class="course-item">
+                        <input type="checkbox" id="mth101" name="courses" value="MTH101">
+                        <label for="mth101">MTH101 - Elementary Mathematics (2 Units)</label>
+                    </div>
+                    <div class="course-item">
+                        <input type="checkbox" id="phy101" name="courses" value="PHY101">
+                        <label for="phy101">PHY101 - General Physics I (2 Units)</label>
+                    </div>
+                    <div class="course-item">
+                        <input type="checkbox" id="phy107" name="courses" value="PHY107">
+                        <label for="phy107">PHY107 - General Practical Physics I (1 Unit)</label>
+                    </div>
+                    <div class="course-item">
+                        <input type="checkbox" id="sta111" name="courses" value="STA111">
+                        <label for="sta111">STA111 - Descriptive Statistics I (3 Units)</label>
+                    </div>
+                    <div class="course-item">
+                        <input type="checkbox" id="chm107" name="courses" value="CHM107">
+                        <label for="chm107">CHM107 - General Chemistry Practical I (1 Unit)</label>
+                    </div>
+                    <div class="course-item">
+                        <input type="checkbox" id="phy103" name="courses" value="PHY103">
+                        <label for="phy103">PHY103 - General Physics III (2 Units)</label>
+                    </div>
+                    <div class="course-item">
+                        <input type="checkbox" id="cos101" name="courses" value="COS101">
+                        <label for="cos101">COS101 - Introduction to Computer (3 Units)</label>
+                    </div>
+                    <div class="course-item">
+                        <input type="checkbox" id="rdg103" name="courses" value="RDG103">
+                        <label for="rdg103">RDG103 - Introduction to Radiology/Radiography Procedures (2 Units)</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Examination Rules -->
+            <div class="form-section rules-section">
+                <h3>EXAMINATION RULES AND REGULATIONS</h3>
+                <div class="rules-content">
+                    <ol>
+                        <li>Candidates should be in the vicinity of the Examination Hall at least 30 minutes before the commencement of examination.</li>
+                        <li>No candidate will be allowed into the Examination Hall without a valid Examination Card and University Identity Card.</li>
+                        <li>Candidates are NOT allowed to write anything on Examination Card.</li>
+                        <li>No candidate will be permitted to:
+                            <ul>
+                                <li>Enter Examination Hall 30 minutes after commencement of the Examination</li>
+                                <li>Leave the Examination Hall without having spent at least 1 hour 30 minutes in the Examination.</li>
+                            </ul>
+                        </li>
+                        <li>Candidates are NOT permitted to give or receive assistance from fellow candidates.</li>
+                        <li>Candidates are NOT allowed to bring lecture notes, textbooks, mobile phones, or anything incriminating.</li>
+                        <li>Candidate who wishes to attract the attention of the invigilator shall do so by raising his/her hand only.</li>
+                        <li>Candidates MUST personally hand in their scripts to an invigilator before leaving Examination Hall.</li>
+                        <li>Candidates MUST ensure that they duly sign the attendance register.</li>
+                        <li>Violation of any examination rule is liable to disciplinary action.</li>
+                    </ol>
+                </div>
+
+                <div class="acceptance-section">
+                    <input type="checkbox" id="acceptRules" name="acceptRules" required>
+                    <label for="acceptRules">
+                        I hereby agree to abide by the rules and regulations stated above.
+                    </label>
+                </div>
+
+                <div class="signature-section">
+                    <label for="digitalSignature">DIGITAL SIGNATURE *</label>
+                    <input type="text" id="digitalSignature" name="digitalSignature" required 
+                           placeholder="Type your full name as digital signature">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-actions">
+                <button type="button" id="previewBtn" class="btn preview-btn">Preview Card</button>
+                <button type="submit" class="btn submit-btn">Generate Examination Card</button>
+                <button type="button" id="printBtn" class="btn print-btn" style="display: none;">Print Card</button>
+            </div>
+        </form>
+
+        <!-- Preview Section -->
+        <div id="previewSection" class="preview-section" style="display: none;">
+            <div id="examCardPreview" class="exam-card-preview">
+                <!-- Preview content will be generated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
